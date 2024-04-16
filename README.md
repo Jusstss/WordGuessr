@@ -1,2 +1,2 @@
 # WordGuessr
-Wordle game copy in JAVA
+A Java game based on web game "Wordle"
