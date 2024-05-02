@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
 import java.util.Random;
 
 public class GameController {
@@ -13,9 +14,15 @@ public class GameController {
     @FXML
     private TextField userInputField;
 
-    private String[] words = {"SHAKE", "SHARE", "PANIC", "AMUSE", "SHADE"};
+    private final String filename = "./src/main/words.txt";
+    private final String[] words;
     private String correctWord;
     private int remainingAttempts = 6;
+
+    public GameController() throws IOException {
+        String fileContent = Utilitys.readFile(filename);
+        words = fileContent.split("\\r?\\n");
+    }
 
     public void initialize() {
         startNewGame();
@@ -31,12 +38,20 @@ public class GameController {
 
     @FXML
     private void handleGuess() {
-        String guess = userInputField.getText().toUpperCase();
+        String guess = userInputField.getText().toLowerCase();
 
-        while (guess.length() > 5){
-            updateFeedbackLabel("Word is too long!");
-            return;
+        int validationCode = Utilitys.IsAValidWord(guess, words);
+        while (validationCode != 0) {
+            if (validationCode == 1) {
+                updateFeedbackLabel("Word isn't 5 letters!");
+                return;
+            }
+            if (validationCode == 2) {
+                updateFeedbackLabel("Word doesn't exist!");
+                return;
+            }
         }
+
 
         if (guess.equals(correctWord)) {
             updateFeedbackLabel("Correct! You win!");
