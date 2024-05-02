@@ -14,14 +14,14 @@ public class GameController {
     @FXML
     private TextField userInputField;
 
-    Utilitys utils = new Utilitys();
-
-    private String filename = "./src/main/words.txt";
-    private String[] words = new String[]{utils.readFile(filename)};
+    private final String filename = "./src/main/words.txt";
+    private final String[] words;
     private String correctWord;
     private int remainingAttempts = 6;
 
     public GameController() throws IOException {
+        String fileContent = Utilitys.readFile(filename);
+        words = fileContent.split("\\r?\\n");
     }
 
     public void initialize() {
@@ -40,12 +40,13 @@ public class GameController {
     private void handleGuess() {
         String guess = userInputField.getText().toLowerCase();
 
-        while (Utilitys.IsAValidWord(guess, words) != 0) {
-            if (Utilitys.IsAValidWord(guess, words) == 1) {
+        int validationCode = Utilitys.IsAValidWord(guess, words);
+        while (validationCode != 0) {
+            if (validationCode == 1) {
                 updateFeedbackLabel("Word isn't 5 letters!");
                 return;
             }
-            if (Utilitys.IsAValidWord(guess, words) == 2) {
+            if (validationCode == 2) {
                 updateFeedbackLabel("Word doesn't exist!");
                 return;
             }
