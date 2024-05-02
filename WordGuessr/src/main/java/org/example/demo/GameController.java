@@ -20,7 +20,7 @@ public class GameController {
     private int remainingAttempts = 6;
 
     public GameController() throws IOException {
-        String fileContent = Utilitys.readFile(filename);
+        String fileContent = Utilities.readFile(filename);
         words = fileContent.split("\\r?\\n");
     }
 
@@ -40,7 +40,7 @@ public class GameController {
     private void handleGuess() {
         String guess = userInputField.getText().toLowerCase();
 
-        int validationCode = Utilitys.IsAValidWord(guess, words);
+        int validationCode = Utilities.IsAValidWord(guess, words);
         while (validationCode != 0) {
             if (validationCode == 1) {
                 updateFeedbackLabel("Word isn't 5 letters!");

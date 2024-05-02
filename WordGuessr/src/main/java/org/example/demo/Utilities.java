@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Utilitys {
+public class Utilities {
 
     public static String readFile(String filename) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
