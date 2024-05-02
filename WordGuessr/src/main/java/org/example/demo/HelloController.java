@@ -9,6 +9,12 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        welcomeText.setText("Welcome to WordGuessr Application!");
+    }
+
+    @FXML
+    private void submitGuess() {
+
+        System.out.println("Guess submitted!");
     }
 }
