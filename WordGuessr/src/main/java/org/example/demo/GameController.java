@@ -14,7 +14,7 @@ public class GameController {
     @FXML
     private TextField userInputField;
 
-    private final String filename = "./src/main/words.txt";
+    private final String filename = "./WordGuessr/src/main/words.txt";
     private final String[] words;
     private String correctWord;
     private int remainingAttempts = 6;
