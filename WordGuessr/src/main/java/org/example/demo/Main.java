@@ -7,17 +7,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 900);
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("game-screen.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400); // Adjust the scene size as needed
         stage.setTitle("WordGuessr");
         stage.setScene(scene);
         stage.show();
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }
