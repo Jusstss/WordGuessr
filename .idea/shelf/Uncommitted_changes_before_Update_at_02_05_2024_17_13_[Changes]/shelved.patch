@@ -1,0 +1,19 @@
+Index: WordGuessr/src/main/java/org/example/demo/GameController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.demo;\r\n\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.TextField;\r\n\r\nimport java.io.IOException;\r\nimport java.util.Random;\r\n\r\npublic class GameController {\r\n    @FXML\r\n    private Label feedbackLabel;\r\n\r\n    @FXML\r\n    private TextField userInputField;\r\n\r\n    private final String filename = \"./src/main/words.txt\";\r\n    private final String[] words;\r\n    private String correctWord;\r\n    private int remainingAttempts = 6;\r\n\r\n    public GameController() throws IOException {\r\n        String fileContent = Utilities.readFile(filename);\r\n        words = fileContent.split(\"\\\\r?\\\\n\");\r\n    }\r\n\r\n    public void initialize() {\r\n        startNewGame();\r\n    }\r\n\r\n    @FXML\r\n    private void startNewGame() {\r\n        Random random = new Random();\r\n        correctWord = words[random.nextInt(words.length)];\r\n        remainingAttempts = 6;\r\n        updateFeedbackLabel(\"\");\r\n    }\r\n\r\n    @FXML\r\n    private void handleGuess() {\r\n        String guess = userInputField.getText().toLowerCase();\r\n\r\n        int validationCode = Utilities.IsAValidWord(guess, words);\r\n        while (validationCode != 0) {\r\n            if (validationCode == 1) {\r\n                updateFeedbackLabel(\"Word isn't 5 letters!\");\r\n                return;\r\n            }\r\n            if (validationCode == 2) {\r\n                updateFeedbackLabel(\"Word doesn't exist!\");\r\n                return;\r\n            }\r\n        }\r\n\r\n\r\n        if (guess.equals(correctWord)) {\r\n            updateFeedbackLabel(\"Correct! You win!\");\r\n        } else {\r\n            remainingAttempts--;\r\n            if (remainingAttempts > 0) {\r\n                updateFeedbackLabel(\"Wrong! \" + remainingAttempts + \" attempts remaining.\");\r\n            } else {\r\n                updateFeedbackLabel(\"Game over! The correct word was: \" + correctWord);\r\n            }\r\n        }\r\n    }\r\n\r\n    private void updateFeedbackLabel(String text) {\r\n        feedbackLabel.setText(text);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/WordGuessr/src/main/java/org/example/demo/GameController.java b/WordGuessr/src/main/java/org/example/demo/GameController.java
+--- a/WordGuessr/src/main/java/org/example/demo/GameController.java	(revision fe0621c7ed43a8eb65b7974c1865cf8a0e000642)
++++ b/WordGuessr/src/main/java/org/example/demo/GameController.java	(date 1714659095336)
+@@ -14,7 +14,7 @@
+     @FXML
+     private TextField userInputField;
+ 
+-    private final String filename = "./src/main/words.txt";
++    private final String filename = ".\\WordGuessr\\src\\main\\words.txt";
+     private final String[] words;
+     private String correctWord;
+     private int remainingAttempts = 6;
