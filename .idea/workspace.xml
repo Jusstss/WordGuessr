@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5058b40-877b-4a38-bc53-08c2d2350dd5" name="Changes" comment="sa" />
+    <list default="true" id="e5058b40-877b-4a38-bc53-08c2d2350dd5" name="Changes" comment="sa">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_05_2024_11_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_05_2024_11_07__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2024_17_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_02_05_2024_17_13__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordGuessr/src/main/java/org/example/demo/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WordGuessr/src/main/java/org/example/demo/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WordGuessr/src/main/resources/org/example/demo/game-screen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/WordGuessr/src/main/resources/org/example/demo/game-screen.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,9 +47,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Maven.demo [clean].executor": "Run",
+    "Maven.demo [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "jaska",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/objektinis/calculator",
     "project.structure.last.edited": "Modules",
@@ -66,6 +76,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
