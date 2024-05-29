@@ -40,5 +40,46 @@
             <Button onAction="#startNewGame" style="-fx-font-size: 16px;" text="Start New Game" />
         </VBox>
     </bottom>
-
+    <bottom>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="10" />
+            </padding>
+            <Button onAction="#startNewGame" style="-fx-font-size: 16px;" text="Start New Game" />
+            <VBox alignment="CENTER" spacing="5">
+                <HBox alignment="CENTER" spacing="5">
+                    <Button text="Q" onAction="#handleKeyboardInput" />
+                    <Button text="W" onAction="#handleKeyboardInput" />
+                    <Button text="E" onAction="#handleKeyboardInput" />
+                    <Button text="R" onAction="#handleKeyboardInput" />
+                    <Button text="T" onAction="#handleKeyboardInput" />
+                    <Button text="Y" onAction="#handleKeyboardInput" />
+                    <Button text="U" onAction="#handleKeyboardInput" />
+                    <Button text="I" onAction="#handleKeyboardInput" />
+                    <Button text="O" onAction="#handleKeyboardInput" />
+                    <Button text="P" onAction="#handleKeyboardInput" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="5">
+                    <Button text="A" onAction="#handleKeyboardInput" />
+                    <Button text="S" onAction="#handleKeyboardInput" />
+                    <Button text="D" onAction="#handleKeyboardInput" />
+                    <Button text="F" onAction="#handleKeyboardInput" />
+                    <Button text="G" onAction="#handleKeyboardInput" />
+                    <Button text="H" onAction="#handleKeyboardInput" />
+                    <Button text="J" onAction="#handleKeyboardInput" />
+                    <Button text="K" onAction="#handleKeyboardInput" />
+                    <Button text="L" onAction="#handleKeyboardInput" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="5">
+                    <Button text="Z" onAction="#handleKeyboardInput" />
+                    <Button text="X" onAction="#handleKeyboardInput" />
+                    <Button text="C" onAction="#handleKeyboardInput" />
+                    <Button text="V" onAction="#handleKeyboardInput" />
+                    <Button text="B" onAction="#handleKeyboardInput" />
+                    <Button text="N" onAction="#handleKeyboardInput" />
+                    <Button text="M" onAction="#handleKeyboardInput" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </bottom>
 </BorderPane>

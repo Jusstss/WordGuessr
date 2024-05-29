@@ -1,5 +1,6 @@
 package org.example.demo;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -18,13 +19,12 @@ public class GameController {
     private TextField userInputField;
     @FXML
     private GridPane guessGrid;
-
-    private final String filename = "./src/main/words.txt";
     private final String[] words;
     private String correctWord;
     private int remainingAttempts = 6;
 
     public GameController() throws IOException {
+        String filename = "./src/main/words.txt";
         String fileContent = Utilities.readFile(filename);
         words = fileContent.split("\\r?\\n");
     }
@@ -38,6 +38,7 @@ public class GameController {
         });
     }
 
+
     private void updateFeedbackLabel(String text) {
         feedbackLabel.setText(text);
     }
@@ -49,7 +50,9 @@ public class GameController {
         correctWord = words[random.nextInt(words.length)];
         remainingAttempts = 6;
         updateFeedbackLabel("Start guessing!");
-        guessGrid.getChildren().clear();  // Clear the GridPane for new game
+        guessGrid.getChildren().clear();
+        userInputField.setDisable(false);
+        userInputField.requestFocus();
     }
 
     @FXML
@@ -65,14 +68,13 @@ public class GameController {
         addGuessToGrid(guess);
         if (guess.equals(correctWord)) {
             updateFeedbackLabel("Correct! You win!");
-            // Optionally disable further input if the game is won
         } else {
             remainingAttempts--;
             if (remainingAttempts > 0) {
                 updateFeedbackLabel("Try again! " + remainingAttempts + " attempts remaining.");
             } else {
                 updateFeedbackLabel("Game over! The correct word was: " + correctWord);
-                // Optionally disable further input
+                userInputField.setDisable(true);
             }
         }
     }
@@ -98,6 +100,12 @@ public class GameController {
 
             guessGrid.add(label, i, rowIndex); // Add label to grid at the correct column (i) and row (rowIndex)
         }
+    }
+    @FXML
+    private void handleKeyboardInput(ActionEvent event) {
+        Button button = (Button) event.getSource();
+        String letter = button.getText();
+        userInputField.appendText(letter.toLowerCase());
     }
 
 }
