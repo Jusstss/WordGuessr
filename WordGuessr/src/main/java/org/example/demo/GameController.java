@@ -18,10 +18,8 @@ public class GameController {
     private TextField userInputField;
     @FXML
     private GridPane guessGrid;
-    @FXML
-    private Button guessButton;
 
-    private final String filename = "./WordGuessr/src/main/words.txt";
+    private final String filename = "./src/main/words.txt";
     private final String[] words;
     private String correctWord;
     private int remainingAttempts = 6;
